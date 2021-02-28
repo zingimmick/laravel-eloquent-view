@@ -32,6 +32,7 @@ class ViewableTest extends TestCase
         self::assertSame(1, $subject->viewersCount());
         $user->view($subject);
         self::assertSame(1, $subject->viewers()->count());
+        dump($subject->viewers);
         self::assertSame(1, $subject->viewers->count());
         $paginate = $subject->viewers()->paginate();
         self::assertSame(1, $paginate->total());
